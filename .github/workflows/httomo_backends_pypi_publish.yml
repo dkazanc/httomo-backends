@@ -25,6 +25,8 @@ jobs:
           python-version: "3.10"
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel          
           $CONDA/bin/conda install conda-forge::tomopy
           $CONDA/bin/conda install httomo::httomolib
           $CONDA/bin/conda install conda-forge::pyyaml
@@ -36,10 +38,7 @@ jobs:
           $CONDA/bin/python ./httomo-backends/scripts/yaml_templates_generator.py -i ./httomo-backends/methods_database/backends/httomolib/httomolib_modules.yaml -o ./httomo-backends/yaml_templates/httomolib
       - name: Build package
         run: |
-          python -m pip install --upgrade pip
-          python -m install setuptools wheel
-          python -m pip install build
-          python -m install --upgrade build          
+          python -m pip install build   
           python -m build
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

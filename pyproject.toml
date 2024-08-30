@@ -28,8 +28,8 @@ dev_template = "{tag}"
 [project]
 name = "httomo-backends"
 version = "2.1"
-description = "Supporting files for the backend libraries for High Throughput Tomography (HTTomo) software."
-readme = "README.rst"
+description = "Supplementary files for HTTomo backends."
+readme = "README.md"
 license = {text = "BSD-3-Clause"}
 authors = [
     {name = "Daniil Kazantsev", email = "daniil.kazantsev@diamond.ac.uk"},

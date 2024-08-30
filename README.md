@@ -1,2 +1,2 @@
 # httomo-backends
-test for httomo backends
+test for httomo-backends package

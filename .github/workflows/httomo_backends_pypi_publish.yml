@@ -30,6 +30,7 @@ jobs:
           pip install --upgrade build
           $CONDA/bin/conda install conda-forge::tomopy
           $CONDA/bin/conda install httomo::httomolib
+          $CONDA/bin/conda install conda-forge::yaml
           $CONDA/bin/conda list
       - name: Generate yaml templates
         run: |

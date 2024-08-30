@@ -36,10 +36,10 @@ jobs:
           $CONDA/bin/python ./httomo-backends/scripts/yaml_templates_generator.py -i ./httomo-backends/methods_database/backends/httomolib/httomolib_modules.yaml -o ./httomo-backends/yaml_templates/httomolib
       - name: Build package
         run: |
-          $CONDA/bin/python -m pip install --upgrade pip
-          $CONDA/bin/python -m install setuptools wheel
-          $CONDA/bin/python -m pip install build
-          $CONDA/bin/python -m install --upgrade build          
-          $CONDA/bin/python -m build
+          python -m pip install --upgrade pip
+          python -m install setuptools wheel
+          python -m pip install build
+          python -m install --upgrade build          
+          python -m build
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

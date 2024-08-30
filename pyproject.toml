@@ -4,16 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 include-package-data = true
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["httomo-backends*"]
+packages = ["httomo_backends",
+            "httomo_backends.scripts",
+            "httomo_backends.methods_database",
+            "httomo_backends.yaml_templates",
+            ]
 
 [tool.setuptools.package-data]
-httomo-backends = [
+httomo_backends = [
+    "methods_database/backends/httomolibgpu/*.yaml",
     "methods_database/backends/httomolib/*.yaml",
     "methods_database/backends/tomopy/*.yaml",
-    "methods_database/yaml_templates/*",
+    "yaml_templates/httomo/httomo.data.hdf.loaders/*.yaml",
+    "yaml_templates/httomo/httomo.methods/*.yaml",
+    "yaml_templates/tomopy/tomopy.misc.corr/*.yaml",
 ]
 
 [tool.setuptools-git-versioning]
